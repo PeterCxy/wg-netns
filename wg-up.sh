@@ -1,7 +1,7 @@
 #!/bin/bash
 CONFIG_NAME="$1"
 DEV_NAME="wg-$CONFIG_NAME"
-source /home/peter/wg/ext/$CONFIG_NAME.conf
+source ${BASH_SOURCE%/*}/ext/$CONFIG_NAME.conf
 
 ip netns add $CONFIG_NAME
 ip netns exec $CONFIG_NAME ip link set lo up
