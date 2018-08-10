@@ -1,0 +1,13 @@
+[Unit]
+Description=Execute Wireguard in network namepsace
+After=network-online.target
+
+[Service]
+User=root
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/path/to/wg-up.sh %i
+ExecStop=/path/to/wg-down.sh %i
+
+[Install]
+WantedBy=multi-user.target
