@@ -1,7 +1,7 @@
 #!/bin/bash
 CONFIG_NAME="$1"
 #DEV_NAME="$2"
-source /home/peter/wg/ext/$CONFIG_NAME.conf
+source ${BASH_SOURCE%/*}/ext/$CONFIG_NAME.conf
 
 #ip netns exec $CONFIG_NAME ip link del dev $DEV_NAME
 #ip netns exec $CONFIG_NAME wg-quick down $CONFIG_NAME
